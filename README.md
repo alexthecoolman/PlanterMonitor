@@ -1,5 +1,6 @@
 # PlanterMonitor
 Monitor if there is still water in self-watering planters. Send the data via Bluetooth using BTHome.
+Using Seeed XIAO nRF52840 and ir sensor.
 
 ![pic](https://raw.githubusercontent.com/alexthecoolman/PlanterMonitor/main/hardware/PlanterMonitor.jpg)
 
