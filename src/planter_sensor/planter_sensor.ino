@@ -8,10 +8,10 @@
 
 // Setting this parameter to true enables a direct reading from the ADC pin of the battery level to be sent to a BTHome counter.
 // The goal is to determine the maximum and minimum battery levels through testing in order to calculate the battery percentage. 
-static const bool Calibration = true;
+static const bool Calibration = false;
 
-static const int MinBatteryLvl = 1400;
-static const int MaxBatteryLvl = 1589;
+static const int MinBatteryLvl = 1300;
+static const int MaxBatteryLvl = 1600;
 
 
 static const uint8_t data_index_batLvl = 18;
@@ -51,6 +51,9 @@ int AdcBatterySmoothedValue = 0;
 void setup()
 {
   Serial.begin(115200);
+
+  pinMode(LED_BLUE, OUTPUT);
+
 
   Bluefruit.begin();
   
@@ -334,9 +337,11 @@ void loop()
 
   SendBleData();
 
+  digitalWrite(LED_BLUE, HIGH);//LED off (active LOW)
+
   // Evaluation every minutes.
   if ( ! Calibration)
   {
-    delay(60000);
+    delay(600000);
   }
 }
