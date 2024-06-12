@@ -337,11 +337,13 @@ void loop()
 
   SendBleData();
 
-  digitalWrite(LED_BLUE, HIGH);//LED off (active LOW)
+  digitalWrite(LED_BLUE, HIGH); //LED off (active LOW)
 
-  // Evaluation every minutes.
+  // Evaluation every 10 minutes.
   if ( ! Calibration)
   {
     delay(600000);
   }
+
+  
 }
