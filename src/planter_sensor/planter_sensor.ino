@@ -56,7 +56,8 @@ void setup()
 
 
   Bluefruit.begin();
-  
+  Bluefruit.setTxPower(2);
+
   SetupSensors();
   SetupBleData();
   SetupBleData2();
@@ -303,7 +304,11 @@ void DebugDisplayData(int instantBatValue)
   Serial.print(AdcBatterySmoothedValue);
 
   Serial.print(" | PIN_VBAT : ");
-  Serial.println(instantBatValue);
+  Serial.print(instantBatValue);
+
+  int8_t txPower = Bluefruit.getTxPower();
+  Serial.print(" | TX Power : ");
+  Serial.println(txPower);
 }
 
 void loop()
