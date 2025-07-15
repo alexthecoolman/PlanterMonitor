@@ -56,7 +56,7 @@ void setup()
 
 
   Bluefruit.begin();
-  Bluefruit.setTxPower(2);
+  Bluefruit.setTxPower(4);
 
   SetupSensors();
   SetupBleData();
