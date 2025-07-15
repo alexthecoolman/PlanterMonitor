@@ -210,7 +210,7 @@ void SendBleData()
   Bluefruit.Advertising.clearData();
   Bluefruit.Advertising.setData(ble_adv_data, sizeof(ble_adv_data));
   Bluefruit.Advertising.restartOnDisconnect(true);
-  Bluefruit.Advertising.setInterval(32, 244);  // Interval in unit of 0.625 ms.
+  Bluefruit.Advertising.setInterval(32, 160);  // Interval in unit of 0.625 ms.
   Bluefruit.Advertising.setFastTimeout(30);    // Temp delay in sec.
   Bluefruit.Advertising.start(0);
 
@@ -221,14 +221,14 @@ void SendBleData()
     Bluefruit.Advertising.clearData();
     Bluefruit.Advertising.setData(ble_adv_data2, sizeof(ble_adv_data2));
     Bluefruit.Advertising.restartOnDisconnect(true);
-    Bluefruit.Advertising.setInterval(32, 244);  // Interval in unit of 0.625 ms.
+    Bluefruit.Advertising.setInterval(32, 160);  // Interval in unit of 0.625 ms.
     Bluefruit.Advertising.setFastTimeout(30);    // Temp delay in sec.
     Bluefruit.Advertising.start(0);
     delay(10);
   }
   else
   {
-    delay(2000);
+    delay(5000);
     Bluefruit.Advertising.stop();
   }
 }
